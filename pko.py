@@ -7,7 +7,6 @@ def kent_map(x, a=0.7):
         return x / a
     else:
         return (1 - x) / (1 - a)
-
 # 生成初始种群
 def initialize_population(pop_size, dim, a=0.7):
     population = []
@@ -68,13 +67,11 @@ def ipko(pop_size, dim, max_iter):
                     if new_fitness < best_fitness:
                         best_fitness = new_fitness
                         best_solution = new_individual
-
         # 周期性重组子种群（简化）
         if iter % 10 == 0:
             population = population[np.random.permutation(pop_size)]
 
     return best_solution, best_fitness
-
 
 pop_size = 50
 dim = 10
